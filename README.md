@@ -1,8 +1,8 @@
 # Honey RPG
 # Releases (23/09/19 updated)
-## For learning JavaScript.
+### For learning JavaScript.
 
-## class files
+### class files
 - Character
 - Fighter
 - Monster
