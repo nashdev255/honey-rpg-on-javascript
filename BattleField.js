@@ -1,21 +1,41 @@
 import readlineSync from 'readline-sync';
 
 class BattleField {
+  /* private fields */
+  #fighter;
+  #monster;
+
+  /* private methods */
+
+  /**
+   * Returns a random number 0 or 1.
+   */
+  #generateRandomTurn = () => {
+    return Math.floor(Math.random()*2);
+  }
+
+  /* public methods */
   constructor(fighter, monster) {
     this.fighter = fighter;
     this.monster = monster;
-    this.isFighterTurn = Math.floor(Math.random()*2);
     this.init();
-  }
-
-  init() {
-    this.isFighterTurn = Math.floor(Math.random()*2);
     this.cycleTurn();
   }
 
+  /**
+   * Initialize BattleField.
+   */
+  init() {
+    this.isFighterTurn = this.#generateRandomTurn;
+  }
+
+  /**
+   * Set which turn should be started.<br>
+   * This will end when either monster or fighter died.
+   */
   cycleTurn() {
     if(this.isFighterTurn) {
-      this.selectFighterAttack();
+      this.selectFighterAction();
     } else {
       this.monsterAttack();
     }
@@ -32,7 +52,10 @@ class BattleField {
     this.cycleTurn();
   }
 
-  selectFighterAttack() {
+  /**
+   * User side interface for selecting Action.
+   */
+  selectFighterAction() {
     console.log('what do you want to do?');
     console.log('1.attack 2.protect 3.use item 4.escape');
 
