@@ -3,5 +3,8 @@
   "main": "Main.js",
   "scripts": {
     "start": "node Main.js"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
   }
 }

@@ -1,4 +1,4 @@
-import Character from "../Character";
+import Character from "../Character.js";
 
 class Monster extends Character {
   constructor(name, maxhp, atk, def, spd) {

@@ -34,10 +34,15 @@ class BattleField {
 
   selectFighterAttack() {
     console.log('what do you want to do?');
-    console.log('1.attack 2.protect 3.use item 4.escape')
-    while(1 <= Math.floor(readlineSync.question('>')) && Math.floor(readlineSync.question('>')) <= 4) {
-      const userSelected = readlineSync.question('>');
+    console.log('1.attack 2.protect 3.use item 4.escape');
+
+    let userSelected = undefined;
+    let isNotSelected = true;
+    while(isNotSelected) {
+      userSelected = readlineSync.questionInt();
+      if(1 <= userSelected && userSelected <= 4) isNotSelected = false;
     }
+
     switch(userSelected) {
       case 1:
         this.fighter.attack(monster);

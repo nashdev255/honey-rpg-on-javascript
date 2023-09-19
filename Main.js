@@ -1,5 +1,4 @@
 import BattleField from "./BattleField.js";
-import Character from "./Characters/Character.js";
 import Fighter from "./Characters/Fighters/Fighter.js";
 import Monster from "./Characters/Monsters/Monster.js";
 
